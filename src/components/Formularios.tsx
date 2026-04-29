@@ -41,7 +41,7 @@ export const Formularios = ({ onCalcular }: Props) => {
     if (isNaN(altura) || altura <= 0 || altura >= 3) {
       Alert.alert(
         "Altura inválida",
-        "La altura debe ser mayor a 0 y menor a 3"
+        "La altura debe ser mayor a 0 y menor a 3",
       );
       return;
     }
@@ -65,7 +65,6 @@ export const Formularios = ({ onCalcular }: Props) => {
 
       {/* FILA PESO + ALTURA */}
       <View style={formStyles.row}>
-
         {/* BLOQUE PESO */}
         <View style={formStyles.fieldHalf}>
           <Text style={formStyles.label}>Peso (kg)</Text>
@@ -82,7 +81,7 @@ export const Formularios = ({ onCalcular }: Props) => {
           {/* Slider para peso */}
           <Text style={formStyles.sliderLabel}>Ajustar peso</Text>
 
-          <Slider 
+          <Slider
             style={formStyles.slider}
             minimumValue={1}
             maximumValue={499.5}
@@ -91,9 +90,7 @@ export const Formularios = ({ onCalcular }: Props) => {
             minimumTrackTintColor={COLORS.primary}
             maximumTrackTintColor={COLORS.border}
             thumbTintColor={COLORS.primary}
-            onValueChange={(value) =>
-              handleChange("peso", value.toFixed(1))
-            }
+            onValueChange={(value) => handleChange("peso", value.toFixed(1))}
           />
         </View>
 
@@ -122,12 +119,9 @@ export const Formularios = ({ onCalcular }: Props) => {
             minimumTrackTintColor={COLORS.primary}
             maximumTrackTintColor={COLORS.border}
             thumbTintColor={COLORS.primary}
-            onValueChange={(value) =>
-              handleChange("altura", value.toFixed(2))
-            }
+            onValueChange={(value) => handleChange("altura", value.toFixed(2))}
           />
         </View>
-
       </View>
 
       {/* BOTÓN */}
